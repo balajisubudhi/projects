@@ -1,0 +1,130 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MapID7788bc2fe</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<style type="text/css">
+body {
+  color: #444444;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 75%;
+  }
+  a {
+  color: #4D87C7;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+ <!-- Map generated in R 3.2.1 by googleVis 0.5.9 package -->
+<!-- Mon May 16 10:58:46 2016 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataMapID7788bc2fe () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "EC3M 7HA",
+"<a href='http://www.lloyds.com'>Lloyd's</a>",
+ "blue"
+],
+[
+ "EC2P 2EJ",
+"<a href='http://www.guildhall.cityoflondon.gov.uk/'>Guildhall</a>",
+"red" 
+] 
+];
+data.addColumn('string','Postcode');
+data.addColumn('string','Tip');
+data.addColumn('string','Marker');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartMapID7788bc2fe() {
+var data = gvisDataMapID7788bc2fe();
+var options = {};
+options["showTip"] = true;
+options["mapType"] = "normal";
+options["enableScrollWheel"] = true;
+options["icons"] = {'blue': {'normal': 'http://icons.iconarchive.com/icons/iconsmind/outline/32/Dress-icon.png',
+								'selected': 'http://icons.iconarchive.com/icons/iconsmind/outline/32/Dress-icon.png'},
+					'red': {'normal': 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Ball-Azure-icon.png',
+							'selected': 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Ball-Right-Azure-icon.png'}		
+							};
+
+
+    var chart = new google.visualization.Map(
+    document.getElementById('MapID7788bc2fe')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "map";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartMapID7788bc2fe);
+})();
+function displayChartMapID7788bc2fe() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapID7788bc2fe"></script>
+ 
+<!-- divChart -->
+  
+<div id="MapID7788bc2fe" 
+  style="width: 500; height: automatic;">
+</div>
+ <div><span>Data: df &#8226; Chart ID: <a href="Chart_MapID7788bc2fe.html">MapID7788bc2fe</a> &#8226; <a href="https://github.com/mages/googleVis">googleVis-0.5.9</a></span><br /> 
+<!-- htmlFooter -->
+<span> 
+  R version 3.2.1 (2015-06-18) 
+  &#8226; <a href="https://developers.google.com/terms/">Google Terms of Use</a> &#8226; <a href="https://google-developers.appspot.com/chart/interactive/docs/gallery/map">Documentation and Data Policy</a>
+</span></div>
+</body>
+</html>

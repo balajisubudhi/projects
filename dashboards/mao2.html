@@ -1,0 +1,178 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Industry</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<style type="text/css">
+body {
+  color: #444444;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 75%;
+  }
+  a {
+  color: #4D87C7;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+ <!-- Map generated in R 3.2.1 by googleVis 0.5.9 package -->
+<!-- Mon May 16 11:54:26 2016 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataIndustry () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ 13.00399977,
+77.61501576,
+"5687391" 
+],
+[
+ 12.99922648,
+77.50972351,
+"5687392" 
+],
+[
+ 12.92454656,
+77.65041681,
+"5687393" 
+],
+[
+ 12.99531457,
+77.52652818,
+"5687394" 
+],
+[
+ 13.05761943,
+77.58207902,
+"5687395" 
+],
+[
+ 12.95715834,
+77.6798256,
+"5687396" 
+],
+[
+ 12.94322651,
+77.58579033,
+"5687397" 
+],
+[
+ 12.97231418,
+77.55927368,
+"5687398" 
+],
+[
+ 12.96213119,
+77.61221698,
+"5687399" 
+],
+[
+ 12.94892499,
+77.64962694,
+"5687400" 
+] 
+];
+data.addColumn('number','Latitude');
+data.addColumn('number','Longitude');
+data.addColumn('string','OrderID');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartIndustry() {
+var data = gvisDataIndustry();
+var options = {};
+options["showTip"] = true;
+options["mapType"] = "normal";
+options["enableScrollWheel"] = true;
+options["icons"] = {'Apparel': {'normal': 'http://icons.iconarchive.com/icons/iconsmind/outline/32/Dress-icon.png',
+								'selected': 'http://icons.iconarchive.com/icons/iconsmind/outline/32/Dress-icon.png'},
+					'CPG': {'normal': 'http://icons.iconarchive.com/icons/robinweatherall/cleaning/32/bottles-icon.png',
+								'selected': 'http://icons.iconarchive.com/icons/robinweatherall/cleaning/32/bottles-icon.png'},
+					'Electricals': {'normal': 'http://icons.iconarchive.com/icons/double-j-design/electronics/128/SOT-6-pin-icon.png',
+								'selected': 'http://icons.iconarchive.com/icons/double-j-design/electronics/128/SOT-6-pin-icon.png'},
+					'HomeFurniture': {'normal': 'http://icons.iconarchive.com/icons/icons8/ios7/128/Household-Armchair-icon.png',
+								'selected': 'http://icons.iconarchive.com/icons/icons8/ios7/128/Household-Armchair-icon.png'},
+					'PackagedFood': {'normal': 'http://icons.iconarchive.com/icons/icons8/ios7/128/Food-Lamb-Rack-icon.png',
+								'selected': 'http://icons.iconarchive.com/icons/icons8/ios7/128/Food-Lamb-Rack-icon.png'},
+					'Pharma': {'normal': 'http://icons.iconarchive.com/icons/iconsmind/outline/128/Medicine-2-icon.png',
+								'selected': 'http://icons.iconarchive.com/icons/iconsmind/outline/128/Medicine-2-icon.png'}
+								};
+
+
+    var chart = new google.visualization.Map(
+    document.getElementById('Industry')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "map";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartIndustry);
+})();
+function displayChartIndustry() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartIndustry"></script>
+ 
+<!-- divChart -->
+  
+<div id="Industry" 
+  style="width: 500; height: automatic;">
+</div>
+ <div><span>Data: data1 &#8226; Chart ID: <a href="Chart_Industry.html">Industry</a> &#8226; <a href="https://github.com/mages/googleVis">googleVis-0.5.9</a></span><br /> 
+<!-- htmlFooter -->
+<span> 
+  R version 3.2.1 (2015-06-18) 
+  &#8226; <a href="https://developers.google.com/terms/">Google Terms of Use</a> &#8226; <a href="https://google-developers.appspot.com/chart/interactive/docs/gallery/map">Documentation and Data Policy</a>
+</span></div>
+</body>
+</html>
